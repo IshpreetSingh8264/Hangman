@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+    --primary-color: #1f2f61;
+    --secondary-color: #224ca4;
+    --light-color: #a7c2da;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    font-family: "Roboto", sans-serif;
+    /* Changed font to Roboto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    margin: 20px 0 0;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    font-size: 3rem;
+    /* Increased font size for emphasis */
+}
+
+.game-container {
+    padding: 20px;
+    position: relative;
+    margin: 20px;
+    width: 450px;
+    max-width: 90%;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.figure-container {
+    fill: transparent;
+    stroke: var(--light-color);
+    stroke-width: 4px;
+    stroke-linecap: round;
+}
+
+.wrong-letters-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+}
+
+.wrong-letters-container p {
+    margin: 0 0 5px;
+    font-size: 1.2rem;
+    /* Increased font size for readability */
+}
+
+.wrong-letters-container span {
+    font-size: 2rem;
+    /* Larger font size for wrong letters */
+    color: var(--secondary-color);
+    /* Matching secondary color */
+}
+
+.word {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.letter {
+    border-bottom: 3px solid var(--secondary-color);
+    font-size: 2rem;
+    /* Larger font size for letters */
+    padding: 0 8px;
+    /* Increased padding for letter boxes */
+    margin: 0 3px;
+    height: 40px;
+    /* Reduced height for compactness */
+    line-height: 40px;
+    /* Centering text vertically */
+    text-align: center;
+}
+
+.popup-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    text-align: center;
+}
+
+.popup button {
+    cursor: pointer;
+    background-color: var(--light-color);
+    color: var(--secondary-color);
+    border: 0;
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    border-radius: 5px;
+}
+
+.popup button:active {
+    transform: scale(0.98);
+}
+
+.popup button:focus {
+    outline: none;
+}
+
+.notification-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.notification-container.show {
+    transform: translateY(-100%);
+}
+
+.notification-container p {
+    margin: 0;
+    font-size: 1.2rem;
+}
